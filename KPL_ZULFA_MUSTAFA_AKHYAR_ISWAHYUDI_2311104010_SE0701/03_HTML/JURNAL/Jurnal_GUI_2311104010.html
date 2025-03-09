@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Sederhana</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .calculator {
+        border: 2px solid #333;
+        padding: 15px;
+        background-color: white;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .output {
+        text-align: right;
+        padding: 15px;
+        border-bottom: 2px solid #333;
+        font-size: 24px;
+        min-height: 40px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 8px;
+      }
+
+      .button {
+        padding: 15px;
+        font-size: 18px;
+        border: 1px solid #333;
+        text-align: center;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+
+      .button:hover {
+        background-color: #e0e0e0;
+      }
+
+      .operator {
+        background-color: #ff9500;
+        color: white;
+      }
+
+      .operator:hover {
+        background-color: #ff8000;
+      }
+
+      .equals {
+        background-color: #007aff;
+        color: white;
+      }
+
+      .equals:hover {
+        background-color: #0066cc;
+      }
+
+      .clear {
+        background-color: #ff3b30;
+        color: white;
+      }
+
+      .clear:hover {
+        background-color: #cc2925;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="output" id="output">0</div>
+      <div class="buttons">
+        <button class="button clear" id="btnAC">AC</button>
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button operator" id="btnAdd">+</button>
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="button equals" id="btnEquals">=</button>
+      </div>
+    </div>
+
+    <script>
+      let currentExpression = "";
+      let isNewInput = true;
+
+      const output = document.getElementById("output");
+
+      // Fungsi untuk menampilkan angka
+      function displayNumber(number) {
+        if (isNewInput) {
+          currentExpression = number;
+          isNewInput = false;
+        } else {
+          currentExpression += number;
+        }
+        output.textContent = currentExpression;
+      }
+
+      // Fungsi untuk menambahkan operator
+      function addOperator(op) {
+        if (currentExpression !== "") {
+          currentExpression += op;
+          output.textContent = currentExpression;
+        }
+      }
+
+      // Fungsi untuk menghitung hasil
+      function calculate() {
+        try {
+          if (currentExpression === "") return;
+
+          // Mengganti ',' dengan '.' untuk desimal
+          const expressionForEval = currentExpression.replace(/,/g, ".");
+
+          // Menghitung hasil
+          const result = eval(expressionForEval);
+
+          // Memastikan hasil tidak dalam bentuk ilmiah
+          const formattedResult = Number.isInteger(result)
+            ? result
+            : result.toFixed(8).replace(/\.?0+$/, "");
+
+          output.textContent = formattedResult;
+          currentExpression = formattedResult;
+          isNewInput = true;
+        } catch (error) {
+          output.textContent = "Error";
+          currentExpression = "";
+          isNewInput = true;
+        }
+      }
+
+      // Fungsi untuk mengatur ulang kalkulator
+      function resetCalculator() {
+        currentExpression = "";
+        output.textContent = "0";
+        isNewInput = true;
+      }
+
+      // Event listeners untuk tombol angka
+      document
+        .querySelectorAll(".button:not(.operator):not(.equals):not(.clear)")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            if (button.textContent === ".") {
+              // Cek apakah sudah ada desimal di angka terakhir
+              const lastNumber = currentExpression.split(/[\+\-\*\/]/).pop();
+              if (!lastNumber.includes(".")) {
+                displayNumber(".");
+              }
+            } else {
+              displayNumber(button.textContent);
+            }
+          });
+        });
+
+      // Event listeners untuk tombol operator
+      document.getElementById("btnAdd").addEventListener("click", () => {
+        addOperator("+");
+      });
+
+      // Event listener untuk tombol =
+      document.getElementById("btnEquals").addEventListener("click", () => {
+        calculate();
+      });
+
+      // Event listener untuk tombol AC
+      document.getElementById("btnAC").addEventListener("click", () => {
+        resetCalculator();
+      });
+    </script>
+  </body>
+</html>

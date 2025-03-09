@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GUI Clean Design</title>
+    <style>
+      /* Reset margin & padding, atur font */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ccc; /* Latar belakang abu-abu */
+      }
+
+      /* Kontainer utama untuk menengahkannya */
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Mengatur baris layout untuk input & button, lalu output */
+      .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* Kotak dasar berwarna oranye, dengan shadow & radius */
+      .box {
+        background-color: #ff5722;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.2s ease;
+      }
+      .box:hover {
+        background-color: #e64a19;
+      }
+
+      /* Input text yang bergaya seperti kotak oranye */
+      #inputField {
+        width: 200px;
+        background-color: #ff5722;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 20px;
+        margin: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      /* Warna placeholder putih agar terlihat jelas */
+      #inputField::placeholder {
+        color: #fff;
+        opacity: 0.8;
+      }
+      /* Fokus input */
+      #inputField:focus {
+        outline: none;
+        background-color: #f4511e;
+      }
+
+      /* Tombol kirim */
+      #submitBtn {
+        font-size: 16px;
+      }
+
+      /* Kotak output */
+      #outputBox {
+        min-width: 200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Baris untuk INPUT dan BUTTON -->
+      <div class="row">
+        <input type="text" id="inputField" placeholder="Jenengmu?" />
+        <button id="submitBtn" class="box">Submit</button>
+      </div>
+      <!-- Baris untuk OUTPUT -->
+      <div class="row">
+        <div id="outputBox" class="box">Jawabanmu~</div>
+      </div>
+    </div>
+
+    <script>
+      const inputField = document.getElementById("inputField");
+      const submitBtn = document.getElementById("submitBtn");
+      const outputBox = document.getElementById("outputBox");
+
+      // Event saat tombol ditekan
+      submitBtn.addEventListener("click", () => {
+        const nama = inputField.value.trim();
+        if (nama) {
+          outputBox.textContent = "Halo " + nama;
+        } else {
+          outputBox.textContent = "Mohon masukkan nama praktikan.";
+        }
+      });
+    </script>
+  </body>
+</html>
