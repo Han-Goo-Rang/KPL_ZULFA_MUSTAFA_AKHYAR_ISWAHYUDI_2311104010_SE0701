@@ -1,0 +1,21 @@
+{
+  "firstName": "Zulfa Mustafa",
+  "lastName": "Akhyar Iswahyudi",
+  "gender": "cowok",
+  "age": 20,
+  "address": {
+    "streetAddress": "Pitara",
+    "city": "Depok, Bandung",
+    "state": "Jawa Barat"
+  },
+  "courses": [
+    {
+      "code": "CRI2C4",
+      "name": "Konstruksi Perangkat Lunak"
+    },
+    {
+      "code": "CRI2C7",
+      "name": "Basis Data"
+    }
+  ]
+}

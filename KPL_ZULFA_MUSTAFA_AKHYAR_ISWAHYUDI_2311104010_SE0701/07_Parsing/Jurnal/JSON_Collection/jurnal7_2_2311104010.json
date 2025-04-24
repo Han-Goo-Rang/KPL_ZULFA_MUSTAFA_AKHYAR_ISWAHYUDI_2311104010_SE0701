@@ -1,0 +1,25 @@
+{
+  "members": [
+    {
+      "firstName": "Christian Felix",
+      "lastName": "Saliman Sugiono",
+      "gender": "cowok",
+      "age": 21,
+      "nim": "2311104031"
+    },
+    {
+      "firstName": "Maulana Kaka",
+      "lastName": "Halin Widyadhana",
+      "gender": "cowok",
+      "age": 20,
+      "nim": "2311104034"
+    },
+    {
+      "firstName": "Tsaqif Hisyam",
+      "lastName": "Saputra",
+      "gender": "cowok",
+      "age": 20,
+      "nim": "2311104024"
+    }
+  ]
+}

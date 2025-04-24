@@ -1,0 +1,32 @@
+{
+  "courses": [
+    {
+      "code": "RPL185604",
+      "name": "Interkom"
+    },
+    {
+      "code": "RPL184205",
+      "name": "PRPL"
+    },
+    {
+      "code": "RPL148501",
+      "name": "Basdat"
+    },
+    {
+      "code": "C2I4RC",
+      "name": "KPL"
+    },
+    {
+      "code": "RPL148520",
+      "name": "RKPL"
+    },
+    {
+      "code": "RPL185604",
+      "name": "Proyek T2"
+    },
+    {
+      "code": "RPL158804",
+      "name": "PPL"
+    }
+  ]
+}
