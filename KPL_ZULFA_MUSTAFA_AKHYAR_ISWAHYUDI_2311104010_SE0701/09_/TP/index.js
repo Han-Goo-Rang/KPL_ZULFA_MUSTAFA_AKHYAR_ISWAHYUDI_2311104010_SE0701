@@ -1,5 +1,5 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 const app = express();
 const PORT = 5000;
 
@@ -7,13 +7,13 @@ app.use(cors());
 app.use(express.json());
 
 let mahasiswa = [
-  { nama: "Bangjoule", nim: "2311104010" },
-  { nama: "Lumia Kjellberg (Felix)", nim: "2311104031" },
-  { nama: "Hisari (Hisyam)", nim: "2311104024" },
-  { nama: "Barjling (Kaka)", nim: "2311104034" },
+  { id: 0, nama: "Bangjoule", nim: "2311104010" },
+  { id: 1,nama: "Lumia Kjellberg (Felix)", nim: "2311104031" },
+  { id: 2,nama: "Hisari (Hisyam)", nim: "2311104024" },
+  { id: 3,nama: "Barjling (Kaka)", nim: "2311104034" },
 ];
 
-app.get("/api/mahasiswa", (req, res) => {
+app.get("/api/mahasiswa", (_, res) => {
   res.json(mahasiswa);
 });
 
@@ -29,8 +29,13 @@ app.get("/api/mahasiswa/:index", (req, res) => {
 app.post("/api/mahasiswa", (req, res) => {
   const { nama, nim } = req.body;
   if (nama && nim) {
-    mahasiswa.push({ nama, nim });
-    res.status(201).json({ message: "Mahasiswa ditambahkan", mahasiswa });
+    const newMahasiswa = {
+      id: mahasiswa.length > 0 ? mahasiswa[mahasiswa.length - 1].id + 1 : 1, // Generate ID baru secara increment
+      nama,
+      nim,
+    };
+    mahasiswa.push(newMahasiswa);
+    res.status(201).json({ message: "Mahasiswa ditambahkan", mahasiswa: newMahasiswa });
   } else {
     res.status(400).json({ message: "Nama dan NIM wajib diisi" });
   }
