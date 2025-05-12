@@ -132,7 +132,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\HUAWEI\\OneDrive\\Documents\\ALL_TEL-U_SEMESTER 4\\KONSTRUKSI PERANGKAT LUNAK\\KPL_ZULFA_MUSTAFA_AKHYAR_ISWAHYUDI_2311104010_SE0701\\10_Library\\generated\\prisma",
+      "value": "C:\\Users\\Pongo\\Documents\\ALL_TEL-U_SEMESTER 4\\KONSTRUKSI PERANGKAT LUNAK\\KPL_ZULFA_MUSTAFA_AKHYAR_ISWAHYUDI_2311104010_SE0701\\10_Library\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -146,11 +146,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\HUAWEI\\OneDrive\\Documents\\ALL_TEL-U_SEMESTER 4\\KONSTRUKSI PERANGKAT LUNAK\\KPL_ZULFA_MUSTAFA_AKHYAR_ISWAHYUDI_2311104010_SE0701\\10_Library\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\Pongo\\Documents\\ALL_TEL-U_SEMESTER 4\\KONSTRUKSI PERANGKAT LUNAK\\KPL_ZULFA_MUSTAFA_AKHYAR_ISWAHYUDI_2311104010_SE0701\\10_Library\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
