@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modul 15 - Secure Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 500px; margin: auto; padding: 20px; }
+    .container { border: 1px solid #ccc; padding: 20px; border-radius: 5px; }
+    .input-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input { width: 100%; padding: 8px; }
+    button { padding: 10px 15px; margin-top: 5px; border: none; background: #007BFF; color: white; cursor: pointer; border-radius: 4px; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registrasi</h2>
+    <div class="input-group">
+      <label>Username:</label>
+      <input type="text" id="regUsername" />
+    </div>
+    <div class="input-group">
+      <label>Password:</label>
+      <input type="password" id="regPassword" />
+    </div>
+    <button id="btnRegister">Register</button>
+
+    <h2 style="margin-top: 30px;">Login</h2>
+    <div class="input-group">
+      <label>Username:</label>
+      <input type="text" id="loginUsername" />
+    </div>
+    <div class="input-group">
+      <label>Password:</label>
+      <input type="password" id="loginPassword" />
+    </div>
+    <button id="btnLogin">Login</button>
+
+    <p id="message" style="margin-top:20px;"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

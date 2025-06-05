@@ -1,0 +1,21 @@
+{
+  "name": "12",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "jsdom": "^20.0.0",
+    "jest-environment-jsdom": "^15.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom"
+  }
+}
